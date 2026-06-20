@@ -1,0 +1,119 @@
+# Gaza Strip Map – cities + key road intersections
+# All coordinates from Google Maps (real lat/lon)
+# Distances computed at runtime via Haversine formula — NOT stored here
+# Format: numCities numEdges
+37 63
+
+# Cities (25): Name Latitude Longitude
+Gaza             31.5017  34.4667
+Beit_Lahiya      31.5500  34.4950
+Jabalia          31.5292  34.4822
+Beit_Hanoun      31.5361  34.5306
+Shejaia          31.5100  34.4900
+Rimal            31.5050  34.4600
+Tel_al_Hawa      31.4950  34.4600
+Nuseirat         31.4397  34.3967
+Bureij           31.4256  34.4033
+Maghazi          31.4133  34.4017
+Deir_al_Balah    31.4167  34.3500
+Khan_Yunis       31.3433  34.3050
+Abasan           31.3267  34.3483
+Khuza'a          31.3150  34.3767
+Rafah            31.2817  34.2453
+Kerem_Shalom     31.2383  34.3283
+Bani_Suheila     31.3317  34.3267
+Tel_Sultan       31.2883  34.2317
+Brazil_Camp      31.2883  34.2450
+Al_Shoka         31.2617  34.2833
+Wadi_Gaza        31.4633  34.3983
+Al_Zaytoun       31.4933  34.4700
+Al_Tuffah        31.5233  34.4933
+Al_Shujaiyya     31.5067  34.4967
+Al_Mughraqa      31.4133  34.3583
+
+# Road intersections (12): key junctions for accurate street routing
+Int_North_Gaza   31.5200  34.4750
+Int_Gaza_Center  31.5000  34.4700
+Int_Gaza_S       31.4800  34.4583
+Int_Salah_alDin  31.4700  34.4050
+Int_Wadi_Cross   31.4500  34.3900
+Int_Nuseirat_N   31.4550  34.3983
+Int_Salah_S      31.4100  34.4000
+Int_Deir_Cross   31.4300  34.3583
+Int_Khan_N       31.3700  34.3150
+Int_Khan_Center  31.3450  34.3200
+Int_Rafah_N      31.3050  34.2550
+Int_Rafah_Cross  31.2950  34.2500
+
+# Edges (63): CityA CityB — weight computed at runtime from lat/lon
+# --- Northern Gaza ---
+Beit_Lahiya      Jabalia
+Beit_Lahiya      Beit_Hanoun
+Beit_Lahiya      Int_North_Gaza
+Jabalia          Beit_Hanoun
+Jabalia          Al_Tuffah
+Jabalia          Int_North_Gaza
+Beit_Hanoun      Al_Tuffah
+Int_North_Gaza   Gaza
+Int_North_Gaza   Al_Tuffah
+# --- Gaza city ---
+Gaza             Shejaia
+Gaza             Rimal
+Gaza             Al_Zaytoun
+Gaza             Int_Gaza_Center
+Shejaia          Al_Zaytoun
+Shejaia          Al_Shujaiyya
+Al_Zaytoun       Al_Tuffah
+Al_Zaytoun       Al_Shujaiyya
+Al_Zaytoun       Int_Gaza_Center
+Rimal            Tel_al_Hawa
+Tel_al_Hawa      Int_Gaza_Center
+Tel_al_Hawa      Int_Gaza_S
+Int_Gaza_Center  Int_Gaza_S
+# --- Gaza south to Nuseirat ---
+Int_Gaza_S       Wadi_Gaza
+Int_Gaza_S       Int_Salah_alDin
+Wadi_Gaza        Int_Nuseirat_N
+Int_Salah_alDin  Nuseirat
+Int_Salah_alDin  Int_Wadi_Cross
+Int_Nuseirat_N   Nuseirat
+Int_Nuseirat_N   Int_Wadi_Cross
+# --- Middle area ---
+Nuseirat         Bureij
+Nuseirat         Deir_al_Balah
+Bureij           Maghazi
+Bureij           Int_Salah_S
+Maghazi          Al_Mughraqa
+Maghazi          Int_Salah_S
+Maghazi          Int_Deir_Cross
+Int_Wadi_Cross   Al_Mughraqa
+Int_Salah_S      Int_Deir_Cross
+Int_Deir_Cross   Deir_al_Balah
+Int_Deir_Cross   Al_Mughraqa
+Deir_al_Balah    Al_Mughraqa
+# --- Deir al-Balah to Khan Yunis ---
+Deir_al_Balah    Int_Khan_N
+Al_Mughraqa      Int_Khan_N
+Int_Khan_N       Khan_Yunis
+Int_Khan_N       Int_Khan_Center
+Int_Khan_Center  Khan_Yunis
+# --- Khan Yunis area ---
+Khan_Yunis       Abasan
+Khan_Yunis       Bani_Suheila
+Khan_Yunis       Khuza'a
+Abasan           Khuza'a
+Bani_Suheila     Abasan
+Khuza'a          Al_Shoka
+# --- Khan Yunis to Rafah ---
+Khan_Yunis       Int_Rafah_N
+Int_Rafah_N      Rafah
+Int_Rafah_N      Int_Rafah_Cross
+Int_Rafah_Cross  Rafah
+Int_Rafah_Cross  Brazil_Camp
+# --- Rafah area ---
+Rafah            Tel_Sultan
+Rafah            Brazil_Camp
+Rafah            Kerem_Shalom
+Tel_Sultan       Brazil_Camp
+Brazil_Camp      Al_Shoka
+Al_Shoka         Kerem_Shalom
